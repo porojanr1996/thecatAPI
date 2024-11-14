@@ -47,3 +47,38 @@ pytest --html=report.html
 This will create an HTML report (`report.html`) in the project directory, which you can open in any browser to view the results.
 
 ---
+
+## Test Scenarios
+
+### 1. Retrieve One Random Image (No API Key)
+   - **Description**: Tests retrieving a single random image without an API key.
+   - **Expected Outcome**: The API should return a response with status `200`, containing one image with a valid URL.
+
+### 2. Retrieve 10 Random Images (With API Key)
+   - **Description**: Tests retrieving 10 random images using the API key.
+   - **Expected Outcome**: The response status should be `200`, and the response should contain exactly 10 images, each with a valid URL.
+
+### 3. Retrieve a Specific Image by ID
+   - **Description**: Tests retrieving a specific image by its ID.
+   - **Expected Outcome**: The response status should be `200`, and the image ID returned should match the requested ID.
+
+### 4. Retrieve Images by Category (e.g., "Hats")
+   - **Description**: Tests retrieving images filtered by a specific category "hats".
+   - **Expected Outcome**: The response status should be `200`. Although 5 images are requested, the test handles cases where more images are returned due to API limitations and logs each image URL.
+
+---
+
+## Project Structure
+
+Here’s a quick overview of the project’s structure:
+
+```plaintext
+thecatAPI/
+├── tests/
+│   ├── test_cat_api.py      # Contains test functions for each scenario
+├── .env                     # Environment file to store API Key
+├── README.md
+├── requirements.txt         # List of dependencies
+```
+
+---
